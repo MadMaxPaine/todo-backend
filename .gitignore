@@ -1,0 +1,7 @@
+#Node_modules
+/node_modules
+#ENV
+/.env
+/*.env
+#DB_store
+.DS_Store
