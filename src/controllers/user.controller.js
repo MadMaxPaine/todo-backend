@@ -23,7 +23,8 @@ class UserController {
     const existingUser = await UserService.getOneUsername(username);
 
     if (existingUser) {
-      return this.login(req, res, next);
+     console.log(req.body);     
+      return UserController.prototype.login.call(this, req, res, next);
     }
 
     const registrationData = { username, password };
