@@ -35,7 +35,7 @@ const start = async () => {
 
     await sequelize.authenticate();
     console.log("Синхронізація моделей...");
-    await sequelize.sync({ force: true });
+    await sequelize.sync(/*{ force: true }*/);
     console.log("Синхронізація завершена!");
     // === HTTP ===
     const server = http.createServer(app); // створюємо сервер    
