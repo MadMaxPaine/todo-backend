@@ -12,10 +12,10 @@ exports.taskValidation = [
   .optional()
   .isString()
   .withMessage("Description must be a string"),
- body("dueDate")
-  .optional()
-  .isISO8601()
-  .withMessage("Due date must be a valid date"),
+body("dueDate")
+  .optional({ nullable: true })
+  .custom((value) => value === null || value === "" || typeof value === "undefined" || (typeof value === "string" && !isNaN(Date.parse(value))))
+  .withMessage("Due date must be a valid date or null"),
  body("priority")
   .optional()
   .isInt({ min: 1, max: 10 })
