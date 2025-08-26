@@ -12,14 +12,22 @@ const validateRequest = require("../middlewares/validationRequest.middleware");
  *     description: Операції з задачами
  */
 
+
 /**
  * @swagger
  * /api/tasks:
  *   get:
- *     summary: Отримати всі задачі користувача
+ *     summary: Отримати всі задачі користувача (з фільтром по категорії)
  *     tags: [Task]
  *     security:
  *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: categoryId
+ *         schema:
+ *           type: integer
+ *         required: false
+ *         description: ID категорії для фільтрації задач
  *     responses:
  *       200:
  *         description: Список задач

@@ -25,6 +25,7 @@ const validateRequest = require("../middlewares/validationRequest.middleware");
  */
 router.get("/", authMiddleware, categoryController.getAll);
 
+
 /**
  * @swagger
  * /api/categories/{id}:
